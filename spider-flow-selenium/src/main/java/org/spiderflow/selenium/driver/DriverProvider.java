@@ -3,6 +3,7 @@ package org.spiderflow.selenium.driver;
 import org.openqa.selenium.WebDriver;
 import org.spiderflow.model.SpiderNode;
 
+import java.net.MalformedURLException;
 import java.util.List;
 
 public interface DriverProvider {
@@ -33,5 +34,5 @@ public interface DriverProvider {
 
     public String support();
 
-    public WebDriver getWebDriver(SpiderNode node, String proxyStr);
+    public WebDriver getWebDriver(SpiderNode node, String proxyStr) throws MalformedURLException;
 }

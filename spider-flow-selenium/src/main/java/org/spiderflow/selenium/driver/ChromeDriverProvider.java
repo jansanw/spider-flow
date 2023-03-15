@@ -3,14 +3,16 @@ package org.spiderflow.selenium.driver;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.spiderflow.model.SpiderNode;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Arrays;
-import java.util.List;
 
 @Component
 public class ChromeDriverProvider implements DriverProvider {
@@ -24,8 +26,8 @@ public class ChromeDriverProvider implements DriverProvider {
     }
 
     @Override
-    public WebDriver getWebDriver(SpiderNode node, String proxyStr) {
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+    public WebDriver getWebDriver(SpiderNode node, String proxyStr) throws MalformedURLException {
+//        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         ChromeOptions options = new ChromeOptions();
         String userAgent = node.getStringJsonValue(USER_AGENT);
         //设置User-Agent
@@ -84,6 +86,8 @@ public class ChromeDriverProvider implements DriverProvider {
             proxy.setHttpProxy(proxyStr);
             options.setProxy(proxy);
         }
-        return new ChromeDriver(options);
+
+        WebDriver driver = new RemoteWebDriver(new URL(chromeDriverPath), options);
+        return driver;
     }
 }
