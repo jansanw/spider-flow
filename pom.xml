@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+		<!ELEMENT project (modelVersion|groupId|artifactId|version|packaging|name|url|parent|properties|dependencies|dependencyManagement|modules)*>
+		<!ATTLIST project
+				xmlns CDATA #REQUIRED
+				xmlns:xsi CDATA #REQUIRED
+				xsi:schemaLocation CDATA #REQUIRED>
+		<!ELEMENT modelVersion (#PCDATA)>
+		<!ELEMENT groupId (#PCDATA)>
+		<!ELEMENT artifactId (#PCDATA)>
+		<!ELEMENT version (#PCDATA)>
+		<!ELEMENT packaging (#PCDATA)>
+		<!ELEMENT name (#PCDATA)>
+		<!ELEMENT url (#PCDATA)>
+		<!ELEMENT parent (groupId|artifactId|version)*>
+		<!ELEMENT properties (project.build.sourceEncoding|spider-flow.version|alibaba.fastjson.version|alibaba.druid.version|alibaba.transmittable.version|mybatis.plus.version|apache.commons.text.verion|apache.commons.csv.verion|commons.io.version|guava.version|jsoup.version|xsoup.version)*>
+		<!ELEMENT project.build.sourceEncoding (#PCDATA)>
+		<!ELEMENT spider-flow.version (#PCDATA)>
+		<!ELEMENT alibaba.fastjson.version (#PCDATA)>
+		<!ELEMENT alibaba.druid.version (#PCDATA)>
+		<!ELEMENT alibaba.transmittable.version (#PCDATA)>
+		<!ELEMENT mybatis.plus.version (#PCDATA)>
+		<!ELEMENT apache.commons.text.verion (#PCDATA)>
+		<!ELEMENT apache.commons.csv.verion (#PCDATA)>
+		<!ELEMENT commons.io.version (#PCDATA)>
+		<!ELEMENT guava.version (#PCDATA)>
+		<!ELEMENT jsoup.version (#PCDATA)>
+		<!ELEMENT xsoup.version (#PCDATA)>
+		<!ELEMENT dependencies (dependency)*>
+		<!ELEMENT dependency (groupId|artifactId|version)*>
+		<!ELEMENT dependencyManagement (dependencies)*>
+		<!ELEMENT modules (module)*>
+		<!ELEMENT module (#PCDATA)>
+		]>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.spiderflow</groupId>
@@ -168,5 +201,8 @@
 		<module>spider-flow-api</module>
 		<module>spider-flow-core</module>
 		<module>spider-flow-web</module>
+		<module>spider-flow-redis</module>
+		<module>spider-flow-mongodb</module>
+		<module>spider-flow-selenium</module>
 	</modules>
 </project>

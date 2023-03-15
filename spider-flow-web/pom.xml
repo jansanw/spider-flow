@@ -17,6 +17,26 @@
 			<groupId>org.spiderflow</groupId>
 			<artifactId>spider-flow-core</artifactId>
 		</dependency>
+		<!-- 引入redis插件 -->
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-redis</artifactId>
+		</dependency>
+		<!-- 引入mongodb插件 -->
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-mongodb</artifactId>
+		</dependency>
+		<!-- 引入proxypool插件 -->
+<!--		<dependency>-->
+<!--			<groupId>org.spiderflow</groupId>-->
+<!--			<artifactId>spider-flow-proxypool</artifactId>-->
+<!--		</dependency>-->
+		<!-- 引入selenium插件 -->
+		<dependency>
+			<groupId>org.spiderflow</groupId>
+			<artifactId>spider-flow-selenium</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
